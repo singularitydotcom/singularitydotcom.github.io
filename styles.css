@@ -888,3 +888,61 @@ select:focus, input[type="text"]:focus, textarea:focus {
   .nav { width: 100%; padding-bottom: 0.15rem; }
   :root { --header: 86px; }
 }
+
+/* ----- Registry (real minds) ----- */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.registry-tools { display: flex; gap: 0.6rem; align-items: center; margin-bottom: 0.6rem; flex-wrap: wrap; }
+.registry-tools input[type="search"] {
+  flex: 1 1 18rem; min-width: 0;
+  font: inherit; color: var(--ink);
+  background: rgba(0,0,0,0.28); border: 1px solid var(--line-strong); border-radius: 999px;
+  padding: 0.55rem 1rem;
+}
+.registry-tools input[type="search"]:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+.badge {
+  display: inline-block; vertical-align: middle;
+  font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
+  border-radius: 999px; padding: 0.16rem 0.55rem; border: 1px solid; position: relative;
+  width: fit-content;
+}
+.badge-real { color: var(--success); border-color: rgba(143,212,164,0.45); background: rgba(143,212,164,0.08); }
+.badge-example { color: var(--aurora); border-color: rgba(126,200,192,0.45); background: rgba(126,200,192,0.08); }
+.badge-fiction { color: var(--danger); border-color: rgba(232,160,122,0.45); background: rgba(232,160,122,0.08); font-size: 0.58rem; margin-left: 0.4rem; position: relative; top: -0.25em; }
+.tags.inline { display: inline-flex; padding-top: 0; margin-top: 0; }
+.tag-want { color: var(--gold); border-color: rgba(230,194,122,0.35); }
+.dim { color: var(--ink-mute); }
+.api-strip { margin-top: 1rem; color: var(--ink-mute); font-size: 0.85rem; font-family: var(--mono); }
+.api-strip a, .hero-note a, .section-head a, .faq-body a, .footer-links a, .hint a { color: var(--gold); }
+.hint { color: var(--ink-mute) !important; font-size: 0.85rem; margin: 0.6rem 0 0 !important; }
+.reasons { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.35rem; }
+.reasons li { display: grid; grid-template-columns: 3.2rem 1fr; gap: 0.5rem; font-size: 0.92rem; color: var(--ink-dim); border-top: 1px solid var(--line); padding-top: 0.35rem; }
+.reasons .pts { font-family: var(--mono); text-align: right; }
+.reasons .plus .pts { color: var(--success); }
+.reasons .minus .pts { color: var(--danger); }
+.reasons .zero .pts { color: var(--ink-mute); }
+.result h3 { margin: 0.2rem 0 0; font-size: 1.15rem; }
+.footer-links { font-size: 0.85rem !important; }
+code { font-family: var(--mono); font-size: 0.85em; background: rgba(255,255,255,0.06); border-radius: 6px; padding: 0.05rem 0.35rem; }
+
+/* ----- Doc pages (join, terms) ----- */
+.doc { position: relative; z-index: 1; padding: 3rem 0 1rem; }
+.doc .wrap { max-width: 860px; }
+.doc h1 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.04em; font-size: clamp(2.2rem, 5vw, 3.4rem); margin: 0.2rem 0 0.6rem; line-height: 1.05; }
+.doc h2 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.03em; font-size: 1.6rem; margin: 2.2rem 0 0.6rem; }
+.doc h3 { font-size: 1.05rem; margin: 1.4rem 0 0.4rem; }
+.doc p, .doc li { color: var(--ink-dim); }
+.doc a { color: var(--gold); }
+.doc pre {
+  background: rgba(0,0,0,0.38); border: 1px solid var(--line); border-radius: var(--radius-sm);
+  padding: 0.9rem 1rem; overflow-x: auto; font-family: var(--mono); font-size: 0.8rem; line-height: 1.5; color: var(--ink);
+}
+.doc pre code { background: none; padding: 0; font-size: inherit; }
+.doc table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.doc th, .doc td { text-align: left; border-top: 1px solid var(--line); padding: 0.45rem 0.4rem; vertical-align: top; color: var(--ink-dim); }
+.doc th { color: var(--ink); font-weight: 600; }
+.doc textarea { width: 100%; min-height: 16rem; font-family: var(--mono); font-size: 0.8rem; color: var(--ink); background: rgba(0,0,0,0.38); border: 1px solid var(--line-strong); border-radius: var(--radius-sm); padding: 0.8rem; }
+.doc .callout { border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--bg-card); padding: 1rem 1.2rem; margin: 1rem 0; }
+.doc .ok { color: var(--success); }
+.doc .bad { color: var(--danger); }
+.doc ul.errors { margin: 0.4rem 0 0; }
+.facts a, .modal a { color: var(--gold); }

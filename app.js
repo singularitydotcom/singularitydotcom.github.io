@@ -580,7 +580,7 @@
       (rows.length ? '<dl class="share-meta">' + rows.map(function (row) {
         return "<div><dt>" + esc(row[0]) + "</dt><dd>" + esc(row[1]) + "</dd></div>";
       }).join("") + "</dl>" : "") +
-      '<div class="foot"><span>Not a listing. Stored nowhere.</span><span>a GSF Lab joke</span></div>';
+      '<div class="foot"><span>A pretend card. Stored nowhere.</span><span>a GSF Lab experiment</span></div>';
   }
 
   function renderCustomMatches(p) {
@@ -690,7 +690,7 @@
       });
       ctx.font = "italic 400 28px Fraunces, serif";
       ctx.fillStyle = "#e6c27a";
-      ctx.fillText("a GSF Lab joke", 96, h - 96);
+      ctx.fillText("a GSF Lab experiment", 96, h - 96);
       ctx.font = "400 22px Figtree, sans-serif";
       ctx.fillStyle = "#8c8478";
       ctx.textAlign = "right";

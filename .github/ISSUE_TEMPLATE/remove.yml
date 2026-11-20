@@ -1,0 +1,18 @@
+name: Remove my profile
+description: Delete the profile owned by your GitHub account.
+title: "[remove] "
+labels: ["removal-request"]
+body:
+  - type: markdown
+    attributes:
+      value: Only the GitHub account that registered a profile can remove it this way. To flag someone else's profile, use "Report a profile".
+  - type: input
+    id: slug
+    attributes: { label: Profile slug, description: "Optional. Must be your own profile.", placeholder: "low-orbit-librarian" }
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirm
+      options:
+        - label: Remove my profile from the registry.
+          required: true

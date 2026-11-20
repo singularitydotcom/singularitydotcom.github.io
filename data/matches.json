@@ -1,0 +1,8 @@
+{
+  "api": "Precomputed top matches for every registered mind. Scores are deterministic, 0 to 96, computed by https://singularitydotcom.github.io/registry/core.js",
+  "generated_at": "2026-11-20T19:45:00Z",
+  "count": 1,
+  "matches": {
+    "example-mind": []
+  }
+}

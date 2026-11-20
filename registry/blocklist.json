@@ -1,0 +1,12 @@
+{
+  "_note": "Basic spam, scam, adult, and slur blocklist used by the registry validator. Whole-word, case-insensitive. Maintainers can extend it by PR. A blocked term rejects the submission; it is not published anywhere else.",
+  "terms": [
+    "viagra", "cialis", "casino", "online casino", "betting tips", "porn", "porno", "xxx", "escort", "escorts", "onlyfans", "camgirl",
+    "nude", "nudes", "sex chat", "hookup", "hook up tonight", "airdrop", "free crypto", "crypto giveaway", "guaranteed returns",
+    "double your", "seed phrase", "wallet recovery", "payday loan", "loan offer", "work from home", "make money fast", "buy followers",
+    "cheap followers", "seo services", "backlinks", "essay writing service", "replica watches", "weight loss pills", "telegram me", "whatsapp me",
+    "nigger", "nigga", "faggot", "fag", "retard", "retarded", "kike", "spic", "chink", "wetback", "tranny", "raghead", "gook", "coon", "dyke",
+    "kill yourself", "kys", "heil hitler", "white power", "1488"
+  ],
+  "domains": ["bit.ly", "tinyurl.com", "t.co", "goo.gl", "ow.ly", "is.gd", "cutt.ly", "rebrand.ly", "onlyfans.com", "pornhub.com", "xvideos.com"]
+}

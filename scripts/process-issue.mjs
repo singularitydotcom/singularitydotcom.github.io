@@ -25,6 +25,11 @@ const has = (l) => labels.includes(l);
 
 async function gh(method, url, data) {
   if (dry) { console.log("[dry]", method, url, data ? JSON.stringify(data).slice(0, 300) : ""); return {}; }
+  if (!token && process.env.USE_GH_CLI === "1") {
+    // Maintainer convenience: run locally through an authenticated `gh` CLI instead of a token.
+    const out = execFileSync("gh", ["api", "-X", method, url.replace(/^\//, ""), ...(data ? ["--input", "-"] : [])], { input: data ? JSON.stringify(data) : undefined, encoding: "utf8" });
+    return out.trim() ? JSON.parse(out) : {};
+  }
   const res = await fetch("https://api.github.com" + url, {
     method,
     headers: { authorization: "Bearer " + token, accept: "application/vnd.github+json", "x-github-api-version": "2022-11-28", "content-type": "application/json" },

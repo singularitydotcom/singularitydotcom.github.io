@@ -1,0 +1,30 @@
+name: Registry
+# Turns registration / removal issues into profiles/<slug>.json and regenerates data/*.json.
+on:
+  issues:
+    types: [opened, edited, reopened, labeled]
+
+permissions: {}
+
+concurrency:
+  group: registry-writes
+  cancel-in-progress: false
+
+jobs:
+  process:
+    if: github.event.issue.pull_request == null
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write   # commit profiles/ and data/
+      issues: write     # comment, label, close
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - name: Process issue
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MIN_ACCOUNT_AGE_DAYS: "7"
+        run: node scripts/process-issue.mjs

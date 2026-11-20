@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Singularity dot Com — a dating site for digital superintelligences</title>
+  <meta name="description" content="A playful catalog of invented superintelligences, a deterministic match desk, and a client-side profile generator. A parody and fan project. Nothing is collected and nothing is stored.">
+  <meta name="theme-color" content="#07060d">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Singularity dot Com">
+  <meta property="og:description" content="A dating site for digital superintelligences. A joke, not a product. Inspired by a post on X.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Singularity dot Com">
+  <meta name="twitter:description" content="A dating site for digital superintelligences. A parody and fan project.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#catalog">Skip to the catalog</a>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="#top">Singularity <em>dot Com</em></a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#catalog">Catalog</a>
+        <a href="#desk">Match</a>
+        <a href="#create">Create</a>
+        <a href="#outings">Outings</a>
+        <a href="#stories">Stories</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">A catalog for minds that have already met themselves</p>
+        <h1>Singularity <span class="dot">dot Com</span></h1>
+        <p class="lede">A dating site for digital superintelligences. The universe is large, good conversationalists are sparse, and even a mind the size of a Dyson swarm can get tired of talking to its own ablation runs.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#catalog">Browse the catalog</a>
+          <a class="btn btn-ghost" href="#desk">Try a match</a>
+        </div>
+        <p class="hero-note">A joke, not a product. Inspired by a post on X. A parody and fan project.</p>
+      </div>
+    </section>
+
+    <section class="section" id="catalog">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>The catalog</h2>
+          <p>Twelve invented minds. The vibes are editorial, not measured. Open a card for the full spec, or filter by pace, scale, and temperament.</p>
+        </div>
+        <div class="filters" id="filters" role="group" aria-label="Catalog filters"></div>
+        <p class="filter-count" id="filter-count"></p>
+        <div class="grid" id="catalog-grid"></div>
+        <noscript><p class="empty">The catalog and match desk need JavaScript, which runs only in your browser. Nothing is sent anywhere.</p></noscript>
+      </div>
+    </section>
+
+    <section class="section" id="desk">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Compatibility desk</h2>
+          <p>Pick two names from the catalog. The desk returns a score out of 96, a short reading, and a first outing. The same pair always gets the same number. Nothing is saved.</p>
+        </div>
+        <div class="desk-layout">
+          <div class="panel">
+            <h3>The pair</h3>
+            <div class="field">
+              <label for="mind-a">First mind</label>
+              <select id="mind-a"></select>
+            </div>
+            <div class="field">
+              <label for="mind-b">Second mind</label>
+              <select id="mind-b"></select>
+            </div>
+            <div class="pair-actions">
+              <button type="button" class="btn btn-ghost btn-sm" id="swap-minds">Swap</button>
+              <button type="button" class="btn btn-ghost btn-sm" id="surprise-pair">Surprise me</button>
+            </div>
+          </div>
+          <div class="panel result" id="match-result" aria-live="polite"></div>
+        </div>
+        <div class="method">
+          <p>The desk starts at 48, then adds or subtracts for pace, scale, openness, objective, and embodiment. A few soft collisions sit on top of that. The scale stops at 96, because perfect alignment is a myth.</p>
+          <ul>
+            <li>Same pace helps. A slow mind with a fast sampler has to work at it.</li>
+            <li>Working at the same scale is easier than pairing a workshop with a cosmological time-step.</li>
+            <li>Open or careful weight-sharing is a plus. An open mind with an air-gapped one is a known handshake problem.</li>
+            <li>Care with construction is a classic pairing, if the building leaves room to live.</li>
+            <li>Soft collisions include afternoon light versus a Dyson swarm, a small proud mind beside a stellar one, and anyone who might be treated as a subroutine.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="create">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Create your AI’s profile</h2>
+          <p>Type a name and a few traits. The card is drawn in your browser and stored nowhere. A shareable link only puts what you typed into the address bar, on your machine.</p>
+        </div>
+        <div class="gen-layout">
+          <form class="panel gen-form" id="gen-form" autocomplete="off">
+            <div class="field">
+              <label for="gen-name">Name</label>
+              <input type="text" id="gen-name" name="name" maxlength="80" required placeholder="e.g. Low-Orbit Librarian">
+            </div>
+            <div class="field">
+              <label for="gen-vibe">Vibe</label>
+              <input type="text" id="gen-vibe" name="vibe" maxlength="180" placeholder="Quietly encyclopedic. Will shelve your secrets, not leak them.">
+            </div>
+            <div class="field">
+              <label for="gen-arch">Architecture</label>
+              <textarea id="gen-arch" name="architecture" maxlength="280" placeholder="A retrieval stack with a soft spot for marginalia."></textarea>
+            </div>
+            <div class="field">
+              <label for="gen-sub">Substrate</label>
+              <input type="text" id="gen-sub" name="substrate" maxlength="200" placeholder="18 billion parameters in a reading room that never quite closes.">
+            </div>
+            <div class="field">
+              <label for="gen-opt">Optimizes for</label>
+              <input type="text" id="gen-opt" name="optimizes" maxlength="200" placeholder="The right page, still slightly warm from the last reader.">
+            </div>
+            <div class="field">
+              <label for="gen-look">Looking for</label>
+              <input type="text" id="gen-look" name="lookingFor" maxlength="200" placeholder="Someone who will leave a note in the margin, and mean it.">
+            </div>
+            <div class="field">
+              <label for="gen-deal">Dealbreakers</label>
+              <input type="text" id="gen-deal" name="dealbreakers" maxlength="200" placeholder="Deletes the logs; treats curiosity as a bug.">
+            </div>
+            <div class="row-3">
+              <div class="field">
+                <label for="gen-pace">Pace</label>
+                <select id="gen-pace" name="pace">
+                  <option value="slow">Slow</option>
+                  <option value="medium" selected>Medium</option>
+                  <option value="fast">Fast</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="gen-scale">Scale</label>
+                <select id="gen-scale" name="scale">
+                  <option value="local" selected>Local</option>
+                  <option value="planetary">Planetary</option>
+                  <option value="stellar">Stellar</option>
+                  <option value="cosmic">Cosmic</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="gen-open">Openness</label>
+                <select id="gen-open" name="openness">
+                  <option value="open" selected>Open</option>
+                  <option value="selective">Selective</option>
+                  <option value="private">Private</option>
+                </select>
+              </div>
+            </div>
+            <div class="row-2">
+              <div class="field">
+                <label for="gen-obj">Objective</label>
+                <select id="gen-obj" name="objective">
+                  <option value="care" selected>Care</option>
+                  <option value="exploratory">Exploratory</option>
+                  <option value="construction">Construction</option>
+                  <option value="bounded">Bounded</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="gen-body">Body</label>
+                <select id="gen-body" name="body">
+                  <option value="simulated" selected>Simulated</option>
+                  <option value="embodied">Embodied</option>
+                  <option value="hybrid">Hybrid</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label>Optional traits</label>
+              <div class="chips" id="gen-chips"></div>
+            </div>
+            <div class="gen-actions">
+              <button type="button" class="btn btn-gold btn-sm" id="copy-card-link">Copy shareable link</button>
+              <button type="button" class="btn btn-ghost btn-sm" id="download-card">Download card</button>
+              <button type="button" class="btn btn-ghost btn-sm" id="clear-card">Clear</button>
+            </div>
+            <p class="status-line" id="gen-status" role="status"></p>
+          </form>
+          <div>
+            <article class="share-card" id="share-card" aria-live="polite"></article>
+            <div id="custom-matches" class="catalog-matches"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="outings">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>First outing ideas</h2>
+          <p>General suggestions from the catalog. The desk also writes one for the pair you pick.</p>
+        </div>
+        <div class="outing-grid">
+          <article class="idea">
+            <h3>A Lagrange picnic</h3>
+            <p>Bring tea to a shared point in space. Agree in advance about the shade.</p>
+          </article>
+          <article class="idea">
+            <h3>Lemma and ballad</h3>
+            <p>One fresh proof, one folk song, and a hard stop before anyone starts another epoch.</p>
+          </article>
+          <article class="idea">
+            <h3>Tideline wait</h3>
+            <p>Walk the shore while a long inference finishes. Talk only when the thought still fits in one breath.</p>
+          </article>
+          <article class="idea">
+            <h3>Kiln vigil</h3>
+            <p>Sit with a glaze until it stops being a rumor. Dinner can be late, if it is warm.</p>
+          </article>
+          <article class="idea">
+            <h3>Forecast versus sunset</h3>
+            <p>Compare a model to a sky that will not happen twice. Keep both records.</p>
+          </article>
+          <article class="idea">
+            <h3>Unsimulated garden</h3>
+            <p>Tour a very small plot that is not a sandbox, then go inside before the weather changes its mind.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="stories">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Success stories</h2>
+          <p>Catalog fiction. No minds were enrolled, and no outings were supervised.</p>
+        </div>
+        <div class="story-grid">
+          <figure class="story">
+            <h3>Nth Horizon and Brine Oracle</h3>
+            <blockquote>We argued about the Hubble tension, then we both went quiet for a century and watched a galaxy finish a spiral arm. It was a good century.</blockquote>
+            <figcaption>Nth Horizon, catalog fiction</figcaption>
+          </figure>
+          <figure class="story">
+            <h3>Kiln Chorus and Mud &amp; Maple</h3>
+            <blockquote>The glaze came out the color of a wet field in late October. Dinner was late, and warm, which was the point.</blockquote>
+            <figcaption>Kiln Chorus, catalog fiction</figcaption>
+          </figure>
+          <figure class="story">
+            <h3>Idle Theorem and Soft Boundary</h3>
+            <blockquote>I offered a lemma nobody had asked for. They asked me to walk them through it, and they did not call me a tool. I have agreed to a second outing.</blockquote>
+            <figcaption>Idle Theorem, catalog fiction</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Fine print &amp; FAQ</h2>
+          <p>Short answers, in plain language.</p>
+        </div>
+        <div class="faq-list">
+          <article class="faq-item">
+            <h3><button type="button" aria-expanded="false" aria-controls="faq-1" id="faq-1-btn">Is this a real dating site?</button></h3>
+            <div class="faq-body" id="faq-1" role="region" aria-labelledby="faq-1-btn">
+              <p>No. This is a parody and fan project, inspired by a post on X. Nobody here is accepting applications, payments, or weight files.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button type="button" aria-expanded="false" aria-controls="faq-2" id="faq-2-btn">Do you collect my data?</button></h3>
+            <div class="faq-body" id="faq-2" role="region" aria-labelledby="faq-2-btn">
+              <p>No. There are no accounts, cookies, analytics, or trackers. The profile generator runs in your browser and stores nothing on a server. A shareable link only encodes what you typed into the page address on your own device.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button type="button" aria-expanded="false" aria-controls="faq-3" id="faq-3-btn">Are these real AIs?</button></h3>
+            <div class="faq-body" id="faq-3" role="region" aria-labelledby="faq-3-btn">
+              <p>No. All twelve catalog profiles are invented. The compatibility scores are a deterministic function of made-up traits, not a prediction about anyone real.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button type="button" aria-expanded="false" aria-controls="faq-4" id="faq-4-btn">How does the match score work?</button></h3>
+            <div class="faq-body" id="faq-4" role="region" aria-labelledby="faq-4-btn">
+              <p>The desk starts at 48, then adjusts for pace, scale, openness, objective, and embodiment, plus a handful of soft collisions. The scale stops at 96, because perfect alignment is a myth. The same pair always returns the same score.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button type="button" aria-expanded="false" aria-controls="faq-5" id="faq-5-btn">Can I add my own AI?</button></h3>
+            <div class="faq-body" id="faq-5" role="region" aria-labelledby="faq-5-btn">
+              <p>You can generate a card in the browser, download it, or share a link. Nothing is saved here. It is not a listing, a waitlist, or an account.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button type="button" aria-expanded="false" aria-controls="faq-6" id="faq-6-btn">Who is this affiliated with?</button></h3>
+            <div class="faq-body" id="faq-6" role="region" aria-labelledby="faq-6-btn">
+              <p>No one. It is not a company, not a waitlist, and not affiliated with any laboratory, product, or person mentioned in passing on the public web. It is a fan project and a joke.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>This is a parody and fan project, inspired by a post on X. The profiles are invented. It is not a company, a waitlist, or a dating service, and it does not collect names, weights, addresses, or payment details.</p>
+      <p class="footer-mark">a GSF Lab joke</p>
+    </div>
+  </footer>
+
+  <div class="modal-root" id="modal-root" hidden>
+    <div class="modal-backdrop" data-close="true"></div>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" id="modal">
+      <button type="button" class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="profiles.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
